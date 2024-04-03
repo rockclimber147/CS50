@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>HOW MANY BUTTONS ARE THERE IN THIS 3 X 5 GRID OF BUTTONS?</h3>
+                <p id="question_1_status"><br></p>
+                <div>
+                    <button id="b1">1</button>
+                    <button id="b2">2</button>
+                    <button id="b3">3</button>
+                    <button id="b4">4</button>
+                    <button id="b5">5</button>
+                </div>
+                <div>
+                    <button id="b6">6</button>
+                    <button id="b7">7</button>
+                    <button id="b8">8</button>
+                    <button id="b9">9</button>
+                    <button id="b10">10</button>
+                </div>
+                <div>
+                    <button id="b11">11</button>
+                    <button id="b12">12</button>
+                    <button id="b13">13</button>
+                    <button id="b14">14</button>
+                    <button id="b15">15</button>
+                </div>
+                <script>
+                    const buttons_list = [];
+function display_question_1_state()
+                    {
+                        if (question_1_state < 0)
+                        {
+                            document.getElementById("question_1_status").innerHTML = "Incorrect";
+                        }
+                        else if (question_1_state > 0)
+                        {
+                            document.getElementById("question_1_status").innerHTML = "Correct!";
+                        }
+                    }
+                    // Display question state (should be guessing)
+                    let question_1_state = 0;
+                    display_question_1_state();
+
+                    // Store buttons in an ar
+                    // Make containers for important numbers
+                    let button_amount = 15;
+                    let correct_button_index = 6;
+
+                    // populate list with id selectors of buttons
+                    for (let i = 1; i <= (button_amount); i++)
+                    {
+                        buttons_list.push('#b' + i);
+                    }
+
+                    // for every button
+                    for (let i = 0; i < button_amount; i++)
+                    {
+                        // if it's incorrect, change background to red when clicked
+                        if (i != correct_button_index)
+                        {
+                            let wrong_button = document.querySelector(buttons_list[i]);
+                            console.log(wrong_button);
+                            wrong_button.addEventListener('click', function(){
+                                wrong_button.style.backgroundColor = 'red';
+                                question_1_state -= 1;
+                                display_question_1_state();
+                            });
+                        }
+                        else
+                        {
+                            // change background to green when clicked
+                            let right_button = document.querySelector(buttons_list[i]);
+                            console.log(right_button);
+                            right_button.addEventListener('click', function(){
+                                right_button.style.backgroundColor = 'green';
+                                right_button.innerHTML = '15';
+                                question_1_state += 9001;
+                                display_question_1_state();
+                            });
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>The computer mouse speed is measured in what?</h3>
+                <p id="question_2_status"><br></p>
+                <div>
+                    <input type="text" id="user_answer">
+                    <button class="checkbutton" id="part_2_button">confirm answer</button>
+                    <script>
+                        let correct_answer = 'Mickeys'
+                        function display_q2_status()
+                        {
+                            if (question_2_status == -1)
+                            {
+                                document.getElementById("question_2_status").innerHTML = "Incorrect";
+                                document.querySelector("#user_answer").style.backgroundColor = 'red';
+                            }
+                            else if (question_2_status == 1)
+                            {
+                                document.getElementById("question_2_status").innerHTML = "Correct!";
+                                document.querySelector("#user_answer").style.backgroundColor = 'green';
+                            }
+                        }
+                        let question_2_status = 0;
+                        let q2_submit = document.querySelector("#part_2_button");
+                        q2_submit.addEventListener('click', function(){
+                            if (document.getElementById("user_answer").value === correct_answer)
+                            {
+                                question_2_status = 1;
+                            }
+                            else
+                            {
+                                question_2_status = -1;
+                            }
+                            display_q2_status();
+                        });
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

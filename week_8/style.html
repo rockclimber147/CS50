@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>style</title>
+        <link href="style.css" rel="stylesheet">
+        <style>
+            /* I AM CSS NOW BEHOLD MY COMMENT THINGS HAVE CHANGED AAAAAAAAAAAAA */
+
+            .my_class
+            {
+                font-size: large;
+                text-align: right
+            }
+
+            body
+            {
+                text-align: center;
+            }
+
+            header
+            {
+                /* WE ARE KEY VALUE PAIRS THAT WILL BE ASSIGNED TO THE HEADER */
+                font-size: large;
+                text-align: right;
+            }
+
+            #thehead
+            {
+                font-size: larger;
+                color: #BEEEFF
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            I am the first child
+        </p>
+        <p style="font-size: large; text-align: left;">
+            paragraph 1 (I use in line CSS which is usually a no-no)
+        </p>
+        <p style="font-size: small; text-align: right;">
+            paragraph 2 (I also use CSS)
+        </p>
+        <p style="font-size: large; text-align: right;">
+            paragraph the third
+        </p>
+        <div style="font-size: large; text-align: center";>
+            this is division 1, a father who is center aligned
+            <p>
+                i am a subparagraph, the prodigal son who inherits the father's alignment
+            </p>
+        </div>
+        <div>
+            this is division 2. I am affected by the css at the top as I am in the body. nI can overwrite it at my level like above
+        </div>
+        <div>
+            HELP IM A DIVISION AND IM TRAPPED IN AN INVISIBLE RECTANGLE
+        </div>
+        <header id="thehead">
+            I am a header. I am affected by the CSS at the top. My ID is "the head" and is referred to with a # in the CSS above
+        </header>
+        <main class="external_style">
+            I am main. I am usually used to deliniate the main part of the page
+        </main>
+        <footer id="foot" class="my_class">
+            I am a footer. We are built in dividers that help with standardization. I am affected by the class defined at the top
+            I have a unique ID which is foot.
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+.external_style
+{
+    font-size: larger;
+    text-decoration: none;
+}
+
+.external_style:hover
+{
+    text-decoration: underline;
+    color: #FF00FF;
+}
+
+p:first-child
+{
+    font-size:smaller;
+}
+
+p:first-child:hover
+{
+    text-decoration: underline;
+    color: #FF00FF;
+    font-size: larger;
+}
+
+/* attribute select:
+
+a[href="beepboopbop.com"]
+{
+    ANYTHING IN HERE IS APPLIED TO ANCHOR TAGS (LINKS) THAT POINT TO BEEPBOOPBOP
+}
+
+a[href*="beepboopbop.com"]
+{
+    ANYTHING IN HERE IS APPLIED TO ANCHOR TAGS (LINKS) THAT POINT TO BEEPBOOPBOP OR ONE THAT CONTAINS BEEPBOOPBOP
+    BECAUSE OF THE STAR BEFORE THE =
+}
+
+*/

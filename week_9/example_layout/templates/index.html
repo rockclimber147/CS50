@@ -1,0 +1,15 @@
+{%extends "layout.html" %}
+
+{%block body %}
+
+<!-- Make a placeholder for a variable as below, it's called test: -->
+hello, {{ test }}
+<form action = "/greet" method="post">
+    <input autocomplete="off" autofocus name="other_name" placeholder="Name" type="text">
+    <input type="submit">
+</form>
+<p>
+    hello, {{ other_name }}
+</p>
+
+{% endblock %}

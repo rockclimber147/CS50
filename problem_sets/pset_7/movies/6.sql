@@ -1,0 +1,2 @@
+--write a SQL query to determine the average rating of all movies released in 2012.
+SELECT SUM(rating)/count(rating) as '2012 Average Rating' FROM ratings JOIN movies ON movies.id = ratings.movie_id and movies.year = 2012;

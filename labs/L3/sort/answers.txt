@@ -1,0 +1,62 @@
+sort1 uses: bubble sort
+
+How do you know?:
+
+sort 1 real times (s):
+              sorted5000  0.051
+              sorted10000 0.093
+              sorted50000 0.646
+              random5000  0.116
+              random10000 0.349
+              random50000 7.571
+            reversed5000  0.123
+            reversed10000 0.263
+            reversed50000 5.659
+
+All reversed text files took much longer to sort than the ones in order, by around an order of magnitude.
+This is indicative of bubble sort, as the bestcase scenario of the numbers being in order would only call the function
+around n times, vs n^2 for the worst case scenario. The worst case scenario saw a 50x increase in time vs
+a 10x increas in samples, which is on the order of n^2/2. 5n would also fit these two values, but
+reversed10000 doubled the time with double the samples, agreeing more with n^2/2 than 5n. So the worst case O is on the
+order of n^2 and the best case scales with n, as would be expected with bubble sort.
+
+sort2 uses: merge sort
+
+How do you know?:
+
+sort 2 real times (s)
+              sorted5000  0.055
+              sorted10000 0.062
+              sorted50000 0.607
+              random5000  0.046
+              random10000 0.068
+              random50000 0.602
+            reversed5000  0.044
+            reversed10000 0.084
+            reversed50000 0.580
+
+For this sort all times are similar across the same n values for the different sorts. This is indicative of
+Merge sort, as its best and worst case performances would be the same. The small differences in time between the 5000 and
+10000 n runs is indicative of logarithmic growth, as n doubles while the times increase by around half. The 50000 n times
+being all less than a second as compared to the multi-second runs of sort1 supports this further, as logarithmic growth
+increases slower thehigher the numbers get.
+
+sort3 uses: selection sort
+
+How do you know?:
+
+sort 3 real times (s):
+              sorted5000  0.077
+              sorted10000 0.159
+              sorted50000 3.455
+              random5000  0.057
+              random10000 0.164
+              random50000 3.398
+            reversed5000  0.075
+            reversed10000 0.162
+            reversed50000 3.424
+
+Other than process of elimination, sort 3 has comparable times across the same n levels for all three situations.
+This would fit both selection sort and merge sort, however the growth of these times would be better fit with n^2.
+All 5000 n times roughly quadruple after doubling n, fitting the expected n^2/2 or just on the order of n^2.
+The 50000 n times are near 25x the 10000 n times, also fitting a n^2 type of growth.
